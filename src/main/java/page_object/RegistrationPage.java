@@ -23,14 +23,14 @@ public class RegistrationPage {
 
     private final By loginLink = By.xpath(".//a[(@class='Auth_link__1fOlj') and (@href='/login')]");
 
-    private final By messageIncorrectPassword= By.xpath(".//p[text()='Некорректный пароль']");
+    private final By messageIncorrectPassword = By.xpath(".//p[text()='Некорректный пароль']");
 
     public RegistrationPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public void wait(By element) {
-        new WebDriverWait(driver,  Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(driver1 -> driver.findElement(element).isDisplayed());
     }
 
@@ -50,12 +50,12 @@ public class RegistrationPage {
     }
 
     @Step("Нажатие кнопки регистрации")
-    public void clickRegisterButton(){
+    public void clickRegisterButton() {
         driver.findElement(registerButton).click();
     }
 
     @Step("Нажатие кнопки входа")
-    public void clickLoginLink(){
+    public void clickLoginLink() {
         wait(loginLink);
         driver.findElement(loginLink).click();
     }

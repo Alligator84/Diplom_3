@@ -21,11 +21,11 @@ public class MainPage {
 
     private final By bunsSection = By.xpath(".//div[@style='display: flex;']/div[1]/span");
 
-    private final By bunsTitle  = By.xpath(".//h2[@class='text text_type_main-medium mb-6 mt-10'][1]");
+    private final By bunsTitle = By.xpath(".//h2[@class='text text_type_main-medium mb-6 mt-10'][1]");
 
     private final By saucesSection = By.xpath(".//div[@style='display: flex;']/div[2]/span");
 
-    private final By saucesTitle  = By.xpath(".//h2[@class='text text_type_main-medium mb-6 mt-10'][2]");
+    private final By saucesTitle = By.xpath(".//h2[@class='text text_type_main-medium mb-6 mt-10'][2]");
 
     private final By ingredientsSection = By.xpath(".//div[@style='display: flex;']/div[3]/span");
 
@@ -40,34 +40,34 @@ public class MainPage {
     }
 
     public void wait(By element) {
-        new WebDriverWait(driver,  Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(driver1 -> driver.findElement(element).isDisplayed());
     }
 
     @Step("Нажатие на кнопку входа в аккаунт")
-    public void clickLogInToAccountButton(){
+    public void clickLogInToAccountButton() {
         wait(logInToAccountButton);
         driver.findElement(logInToAccountButton).click();
     }
 
     @Step("Нажатие на кнопку профиля")
-    public void clickPersonalAccountButton(){
+    public void clickPersonalAccountButton() {
         wait(personalAccountButton);
         driver.findElement(personalAccountButton).click();
     }
 
     @Step("Выбор булок")
-    public void clickBunsSection(){
+    public void clickBunsSection() {
         driver.findElement(bunsSection).click();
     }
 
     @Step("Выбор соусов")
-    public void clickSaucesSection(){
+    public void clickSaucesSection() {
         driver.findElement(saucesSection).click();
     }
 
     @Step("Выбор ингредиентов")
-    public void clickIngredientsSection(){
+    public void clickIngredientsSection() {
         driver.findElement(ingredientsSection).click();
     }
 

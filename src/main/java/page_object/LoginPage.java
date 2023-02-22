@@ -14,9 +14,9 @@ public class LoginPage {
 
     private final String loginPageUrl = "https://stellarburgers.nomoreparties.site/login";
 
-    private final By registrationLink =  By.xpath(".//a[(@class='Auth_link__1fOlj') and (@href='/register')]");
+    private final By registrationLink = By.xpath(".//a[(@class='Auth_link__1fOlj') and (@href='/register')]");
 
-    private final By recoverPasswordLink =  By.xpath(".//a[(@class='Auth_link__1fOlj') and (@href='/forgot-password')]");
+    private final By recoverPasswordLink = By.xpath(".//a[(@class='Auth_link__1fOlj') and (@href='/forgot-password')]");
 
     private final By loginButton = By.xpath(".//button[@class='button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_medium__3zxIa']");
 
@@ -29,18 +29,17 @@ public class LoginPage {
     }
 
     public void wait(By element) {
-        new WebDriverWait(driver,  Duration.ofSeconds(10))
-                .until(driver1 -> driver.findElement(element).isDisplayed());
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(driver1 -> driver.findElement(element).isDisplayed());
     }
 
     @Step("Получение ссылки на страницу регистрации")
-    public void clickRegistrationLink(){
+    public void clickRegistrationLink() {
         wait(registrationLink);
         driver.findElement(registrationLink).click();
     }
 
     @Step("Получение ссылки на страницу восстановления пароля")
-    public void clickRecoverPasswordLink(){
+    public void clickRecoverPasswordLink() {
         wait(recoverPasswordLink);
         driver.findElement(recoverPasswordLink).click();
     }
@@ -51,7 +50,7 @@ public class LoginPage {
     }
 
     @Step("Нажатие кнопки логин")
-    public void clickLoginButton(){
+    public void clickLoginButton() {
         wait(loginButton);
         driver.findElement(loginButton).click();
     }

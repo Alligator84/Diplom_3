@@ -18,12 +18,12 @@ public class RestorePage {
     }
 
     public void wait(By element) {
-        new WebDriverWait(driver,  Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(driver1 -> driver.findElement(element).isDisplayed());
     }
 
     @Step("Нажатие на ссылку входа")
-    public void clickLoginLink(){
+    public void clickLoginLink() {
         wait(loginLink);
         driver.findElement(loginLink).click();
     }

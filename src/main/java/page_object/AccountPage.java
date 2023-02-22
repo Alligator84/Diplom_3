@@ -13,7 +13,7 @@ public class AccountPage {
 
     private static final String profilePageUrl = "https://stellarburgers.nomoreparties.site/account/profile";
 
-    private final By logOutPersonalAccountButton =  By.xpath(".//button[@class='Account_button__14Yp3 text text_type_main-medium text_color_inactive']");
+    private final By logOutPersonalAccountButton = By.xpath(".//button[@class='Account_button__14Yp3 text text_type_main-medium text_color_inactive']");
 
     private final By designerButton = By.xpath(".//a[(@class='AppHeader_header__link__3D_hX') and (@href='/')]");
 
@@ -23,14 +23,14 @@ public class AccountPage {
 
     private final By userEmailField = By.xpath(".//input[(@name='name') and (@type='text')]");
 
-    private final By personalAccountNotification =  By.xpath(".//p[text()='В этом разделе вы можете изменить свои персональные данные']");
+    private final By personalAccountNotification = By.xpath(".//p[text()='В этом разделе вы можете изменить свои персональные данные']");
 
     public AccountPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public void wait(By element) {
-        new WebDriverWait(driver,  Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(driver1 -> driver.findElement(element).isDisplayed());
     }
 
@@ -52,19 +52,19 @@ public class AccountPage {
     }
 
     @Step("Выход из аккаунта")
-    public void logOutPersonalAccountButtonClick(){
+    public void logOutPersonalAccountButtonClick() {
         wait(logOutPersonalAccountButton);
         driver.findElement(logOutPersonalAccountButton).click();
     }
 
     @Step("Нажатие на конструктор")
-    public void clickDesignerButton(){
+    public void clickDesignerButton() {
         wait(designerButton);
         driver.findElement(designerButton).click();
     }
 
     @Step("Нажатие на ссылку регистрации")
-    public void clickRegistrationLink(){
+    public void clickRegistrationLink() {
         wait(stellarBurgersLogo);
         driver.findElement(stellarBurgersLogo).click();
     }
